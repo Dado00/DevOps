@@ -2,26 +2,24 @@ pokemonEntrada=$1;
 
 validacion=$(curl https://pokeapi.co/api/v2/pokemon/$pokemonEntrada); 
 
-if [[ "$validacion" == "Not Found" || "$validacion" == "null" ]]; then 
+if [[ "$validacion" == "Not Found" ]]; then 
 
-	clear;
 
-	echo "Ese pokemon no existe";
+	echo "No se ha encontrado el pokemon";
 	
 else
 
-	indice=$(curl https://pokeapi.co/api/v2/pokemon/$pokemonEntrada | jq .id);
+	clave=$(curl https://pokeapi.co/api/v2/pokemon/$pokemonEntrada | jq .id);
 
-	name=$(curl https://pokeapi.co/api/v2/pokemon/$pokemonEntrada | jq .name);
+	nombre=$(curl https://pokeapi.co/api/v2/pokemon/$pokemonEntrada | jq .name);
 
-	weight=$(curl https://pokeapi.co/api/v2/pokemon/$pokemonEntrada | jq .weight);
+	peso=$(curl https://pokeapi.co/api/v2/pokemon/$pokemonEntrada | jq .weight);
 
-	height=$(curl https://pokeapi.co/api/v2/pokemon/$pokemonEntrada | jq .height);
+	altura=$(curl https://pokeapi.co/api/v2/pokemon/$pokemonEntrada | jq .height);
 
-	order=$(curl https://pokeapi.co/api/v2/pokemon/$pokemonEntrada | jq .order);
+	numero=$(curl https://pokeapi.co/api/v2/pokemon/$pokemonEntrada | jq .order);
 	
-	clear;
 	
-	echo "ID={$indice}, name={$name}, weight={$weight}, height={$height}, order={$order}";
+	echo "ID={$clave}, name={$nombre}, weight={$peso}, height={$altura}, order={$numero}";
 
 fi
