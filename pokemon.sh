@@ -10,6 +10,6 @@ else
 	name=$(curl https://pokeapi.co/api/v2/pokemon/$pokemonEntrada | jq .name);
 	height=$(curl https://pokeapi.co/api/v2/pokemon/$pokemonEntrada | jq .height);
 	weight=$(curl https://pokeapi.co/api/v2/pokemon/$pokemonEntrada | jq .weight);
-	echo "ID={$id}, name={$name}, weight={$weight}, height={$height}, order={$order}";
+	echo "ID={$indice}, name={$name}, weight={$weight}, height={$height}, order={$order}";
 
 fi
