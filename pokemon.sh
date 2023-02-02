@@ -1,4 +1,4 @@
-pokemonEntrada=$1;
+poke=$1;
 
 validacion=$(curl https://pokeapi.co/api/v2/pokemon/$pokemonEntrada); 
 
