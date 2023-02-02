@@ -4,7 +4,7 @@ validacion=$(curl https://pokeapi.co/api/v2/pokemon/$pokemonEntrada);
 
 if [[ "$validacion" == "Not Found" || "$validacion" == "null" ]]; then 
 
-	clear;
+
 
 	echo "Ese pokemon no existe";
 	
@@ -19,9 +19,7 @@ else
 	height=$(curl https://pokeapi.co/api/v2/pokemon/$pokemonEntrada | jq .height);
 
 	order=$(curl https://pokeapi.co/api/v2/pokemon/$pokemonEntrada | jq .order);
-	
-	clear;
-	
+
 	echo "ID={$indice}, name={$name}, weight={$weight}, height={$height}, order={$order}";
 
 fi
